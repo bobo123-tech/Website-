@@ -196,8 +196,18 @@
 
   .panel{
     width:100%;
-    background:var(--card-bg);
+    background:
+    linear-gradient(
+    135deg,
+    rgba(255,255,255,0,10)
+    rgba(255,255,255,0,03)
+    );
     border:1px solid var(--card-border);
+    box-shadow:
+    0 8px 32px rgba(0,0,0,.35),
+    0 0 40px rgba(237,164,48,.08),
+    inset 0 1px 0 rgba(255,255.255,.15),
+    inset 0 -1px 0 rgba(255,255,255,.03);
     border-radius:22px;
     padding:38px 28px 30px;
     backdrop-filter:blur(22px);
@@ -211,10 +221,14 @@
   .panel::before{
     content:'';
     position:absolute;
-    top:-40%;left:-20%;
-    width:140%;height:140%;
-    background:radial-gradient(circle at 30% 0%, rgba(232,114,44,.10), transparent 55%);
-    pointer-events:none;
+    pointer-events: none;
+    background:
+    linear-gradient(
+    120deg,
+    rgba(255,255,255,.10) 0%,
+    rgba(255,255,255,.02) 40%,
+    transparent 100%
+    );
   }
   .panel .panel-glare{
     position:absolute;
@@ -1414,6 +1428,10 @@
     }
     frame();
   }
+  /* ================================
+   GLASSMORPHISM
+   ================================ */
+
 
 })();
 </script>

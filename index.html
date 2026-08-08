@@ -194,20 +194,10 @@
   }
   main.card.show{opacity:1;transform:translateY(0);}
 
-  .panel{
+   .panel{
     width:100%;
-    background:
-    linear-gradient(
-    135deg,
-    rgba(255,255,255,0,10)
-    rgba(255,255,255,0,03)
-    );
+    background:var(--card-bg);
     border:1px solid var(--card-border);
-    box-shadow:
-    0 8px 32px rgba(0,0,0,.35),
-    0 0 40px rgba(237,164,48,.08),
-    inset 0 1px 0 rgba(255,255.255,.15),
-    inset 0 -1px 0 rgba(255,255,255,.03);
     border-radius:22px;
     padding:38px 28px 30px;
     backdrop-filter:blur(22px);
@@ -221,14 +211,10 @@
   .panel::before{
     content:'';
     position:absolute;
-    pointer-events: none;
-    background:
-    linear-gradient(
-    120deg,
-    rgba(255,255,255,.10) 0%,
-    rgba(255,255,255,.02) 40%,
-    transparent 100%
-    );
+    top:-40%;left:-20%;
+    width:140%;height:140%;
+    background:radial-gradient(circle at 30% 0%, rgba(232,114,44,.10), transparent 55%);
+    pointer-events:none;
   }
   .panel .panel-glare{
     position:absolute;
@@ -914,6 +900,9 @@
       <input type="range" id="speedSlider" min="50" max="150" value="100" step="5">
     </div>
   </div>
+  <div id="weatherWidget">
+      🌤️ Wetter lädt...
+</div>
   <div class="music-wrap" id="musicWrap">
     <button class="eq-toggle" id="eqToggle" title="Equalizer">
       <svg viewBox="0 0 24 24" fill="none" stroke="#f3e4d3" stroke-width="1.8" stroke-linecap="round"><path d="M4 21V14M4 10V3M12 21V12M12 8V3M20 21V16M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>

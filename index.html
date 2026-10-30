@@ -785,58 +785,7 @@
       box-shadow:inset 0 0 100px 10px rgba(0,0,0,.45) !important;
     }
   }
-  .spotify-widget-container {
-        width: 100%;
-        margin-top: 20px;
-        font-family: inherit;
-    }
-
-    .spotify-box {
-        background: rgba(0, 0, 0, 0.4);
-        border: 1px solid var(--card-border);
-        border-radius: 16px;
-        padding: 14px;
-        backdrop-filter: blur(10px);
-    }
-
-    .spotify-header {
-        font-size: 13px;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 8px;
-        text-align: left;
-    }
-
-    .spotify-search-bar {
-        display: flex;
-        gap: 8px;
-    }
-
-    .spotify-search-bar input {
-        flex: 1;
-        background: rgba(0, 0, 0, 0.5);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        border-radius: 8px;
-        padding: 8px 12px;
-        color: #fff;
-        font-size: 12px;
-        outline: none;
-    }
-
-    .spotify-search-bar button {
-        background: #1DB954;
-        color: white;
-        border: none;
-        border-radius: 8px;
-        padding: 8px 14px;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-    }
-
-    .spotify-search-bar button:hover {
-        background: #1ed760;
-    }
+ 
 </style>
 </head>
 <body>
@@ -871,19 +820,6 @@
 
   <main class="card" id="card">
     <div class="panel" id="panel">
-        <footer>Chris.profile &mdash; made with care</footer>
-<div class="spotify-widget-container">
-    <div class="spotify-box">
-        <div class="spotify-header">🎵 Musik suchen</div>
-        <div class="spotify-search-bar">
-            <input type="text" id="spotifySearchInput" placeholder="Song oder Künstler..." onkeypress="handleSearchKey(event)">
-            <button onclick="searchSpotifyTrack()">Suchen</button>
-        </div>
-        <div id="spotifyPlayerArea" style="margin-top: 12px;">
-            <p style="font-size: 11px; color: #888; margin: 0;">Gib einen Songnamen ein und drücke Suchen.</p>
-        </div>
-    </div>
-</div>
       <div class="panel-glare" id="panelGlare"></div>
       <div class="avatar-wrap">
         <div class="avatar-glow"></div>
@@ -1483,32 +1419,8 @@
     }
     frame();
   }
+
   
-  /*Spotify*/
-
-  function handleSearchKey(event) {
-      if (event.key === 'Enter') {
-          searchSpotifyTrack();
-      }
-  }
-
-  function handleSearchKey(event) {
-      if (event.key === 'Enter') {
-          searchSpotifyTrack();
-      }
-  }
-
-  function searchSpotifyTrack() {
-      var query = document.getElementById('spotifySearchInput').value.trim();
-      var playerArea = document.getElementById('spotifyPlayerArea');
-      
-      if (!query) return;
-
-      var encodedQuery = encodeURIComponent(query);
-      
-      // Nutzt einen stabilen YouTube-Such-Player, der direkt Songs abspielt
-      playerArea.innerHTML = '<iframe width="100%" height="120" src="https://www.youtube-nocookie.com/embed?listType=search&list=' + encodedQuery + '&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" style="border-radius: 10px;"></iframe>';
-  }
 })();
 </script>
 </body>
